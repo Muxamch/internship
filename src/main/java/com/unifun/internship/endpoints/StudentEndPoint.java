@@ -38,4 +38,18 @@ public class StudentEndPoint {
         return student.isPersistent() ? "success" : "something went wrong";
     }
 
+    @GET
+    @Transactional
+    @Path("edit_by_id")
+    public String editById(@QueryParam("group_id") long group_id, @QueryParam("name") String name, @QueryParam("id") long id){
+        Students student = Students.findById(id);
+        if(student != null){
+            student.name = name;
+            student.group_id = group_id;
+            return "success";
+        } else {
+            return "no such id";
+        }
+    }
+
 }
