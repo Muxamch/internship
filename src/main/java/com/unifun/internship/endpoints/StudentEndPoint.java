@@ -1,6 +1,7 @@
 package com.unifun.internship.endpoints;
 
 
+import com.unifun.internship.orm.Group;
 import com.unifun.internship.orm.Students;
 
 import javax.transaction.Transactional;
@@ -45,7 +46,7 @@ public class StudentEndPoint {
         Students student = Students.findById(id);
         if(student != null){
             student.name = name;
-            student.group_id = group_id;
+            student.group = new Group();
             return "success";
         } else {
             return "no such id";

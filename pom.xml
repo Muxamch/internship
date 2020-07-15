@@ -52,6 +52,11 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-jdbc-mysql</artifactId>
     </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.12</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
