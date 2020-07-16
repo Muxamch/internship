@@ -3,8 +3,8 @@ package com.unifun.internship.orm;
 import javax.persistence.*;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
-@Entity(name="tables")
-//@Table(name="students")
+@Entity
+@Table(name="students")
 public class Students extends PanacheEntityBase{
 
     @Id
@@ -12,7 +12,8 @@ public class Students extends PanacheEntityBase{
     public long id;
     public String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne
+    @JoinColumn(name = "group_id")
     public Group group;
 
     public Students(String name, Long groupId){
