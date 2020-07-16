@@ -3,13 +3,15 @@ package com.unifun.internship.orm;
 import javax.persistence.*;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
+import java.awt.*;
+
 @Entity
 @Table(name="students")
 public class Students extends PanacheEntityBase{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public long id;
+    public Long id;
     public String name;
 
     @OneToOne
@@ -23,6 +25,10 @@ public class Students extends PanacheEntityBase{
 
     public Students(){
 
+    }
+
+    public void setGroup(Long groupId) {
+        this.group.id = groupId;
     }
 
     public Long getId() {
@@ -47,7 +53,9 @@ public class Students extends PanacheEntityBase{
         return "Students{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", group_id=" + group +
+                ", group=" + group.getGroup(this.group.id) +
                 '}';
     }
+
+
 }

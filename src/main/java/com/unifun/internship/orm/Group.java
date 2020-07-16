@@ -15,16 +15,16 @@ public class Group extends PanacheEntityBase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public long id;
+    public Long id;
     public String group;
 //    @OneToMany
 //    public Students students;
 
-    public Group(long groupId, String group){
+    public Group(Long groupId, String group){
         this.id = groupId;
         this.group = group;
     }
-    public Group(long groupId){
+    public Group(Long groupId){
         this.id = groupId;
     }
 
@@ -37,8 +37,8 @@ public class Group extends PanacheEntityBase {
 
 
 
-    public String getGroup() {
-        return group;
+    public String getGroup(Long id) {
+        return this.group;
     }
 
 
