@@ -1,6 +1,8 @@
 package com.unifun.internship.endpoints;
 
 
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.unifun.internship.orm.Group;
 import com.unifun.internship.orm.Students;
 
@@ -11,6 +13,8 @@ import javax.ws.rs.QueryParam;
 
 @Path("/students")
 public class StudentEndPoint {
+
+    private ObjectMapper objectMapper;
 
     @GET
     @Path("student")
