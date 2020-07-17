@@ -47,6 +47,9 @@ public class Students extends PanacheEntityBase{
         this.name = name.toLowerCase();
     }
 
+    public String getGroup(){
+      return this.group.getGroup();
+    }
 
     @Override
     public String toString() {
