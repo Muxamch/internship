@@ -18,8 +18,9 @@ public class StudentEndPoint {
 
     @GET
     @Path("student")
-    public String getList(){
-        return Students.listAll().toString();
+    public String getList() throws JsonProcessingException {
+        String studentsJson = objectMapper.writeValueAsString(Students.listAll());
+        return studentsJson;
     }
 
     @GET
