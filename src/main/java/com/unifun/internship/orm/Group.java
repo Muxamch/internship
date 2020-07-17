@@ -38,9 +38,12 @@ public class Group extends PanacheEntityBase {
 
 
     public String getGroup(Long id) {
-        return this.group;
+        return group;
     }
 
+    public String getGroup() {
+        return this.group;
+    }
 
 }
 
